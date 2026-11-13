@@ -1,0 +1,10 @@
+{
+  "default": "deny",
+  "rules": [
+    {
+      "from": "spiffe://demo.local/ns/shop/sa/orders",
+      "methods": ["GET"],
+      "path_prefix": "/stock/"
+    }
+  ]
+}
