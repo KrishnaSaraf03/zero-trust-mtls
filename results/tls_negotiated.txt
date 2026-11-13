@@ -1,0 +1,13 @@
+# openssl s_client -connect 127.0.0.1:8442 -cert certs/orders.crt.pem -key certs/orders.key.pem -CAfile certs/demo-ca.crt.pem -brief
+# server: python3.12 services/inventory.py --mode mtls --port 8442 (Python 3.12.15, OpenSSL 3.5.9); client: OpenSSL 3.6.4 25 Aug 2026 (Library: OpenSSL 3.6.4 25 Aug 2026)
+Connecting to 127.0.0.1
+Can't use SSL_get_servername
+CONNECTION ESTABLISHED
+Protocol version: TLSv1.3
+Ciphersuite: TLS_AES_256_GCM_SHA384
+Requested Signature Algorithms: id-ml-dsa-65:id-ml-dsa-87:id-ml-dsa-44:ECDSA+SHA256:ECDSA+SHA384:ECDSA+SHA512:ed25519:ed448:ecdsa_brainpoolP256r1_sha256:ecdsa_brainpoolP384r1_sha384:ecdsa_brainpoolP512r1_sha512:rsa_pss_pss_sha256:rsa_pss_pss_sha384:rsa_pss_pss_sha512:RSA-PSS+SHA256:RSA-PSS+SHA384:RSA-PSS+SHA512:RSA+SHA256:RSA+SHA384:RSA+SHA512
+Peer certificate: CN=inventory
+Hash used: SHA256
+Signature type: ecdsa_secp256r1_sha256
+Verification: OK
+Negotiated TLS1.3 group: X25519MLKEM768
