@@ -1,0 +1,14 @@
+1 orders    GET  /stock/42     (rule matches)           -> 200  {'sku': '42', 'qty': 17}
+2 orders    POST /admin/reset  (no rule for this path)  -> 403  {'error': 'denied by policy', 'caller': 'spiffe://demo.local/ns/shop/sa/orders'}
+3 reporting GET  /stock/42     (valid cert, no rule)    -> 403  {'error': 'denied by policy', 'caller': 'spiffe://demo.local/ns/shop/sa/reporting'}
+4 no client certificate                                 -> TLS-FAIL  SSLError: [SSL: TLSV13_ALERT_CERTIFICATE_REQUIRED] tlsv13 alert certificate required (_ssl.c:2580)
+5 intruder  cert from untrusted CA                      -> TLS-FAIL  SSLError: [SSL: TLSV1_ALERT_UNKNOWN_CA] tlsv1 alert unknown ca (_ssl.c:2580)
+
+--- server log (results/demo_server.log) ---
+{"event": "listening", "mode": "mtls-policy", "port": 8443, "ts": 1794581757.694}
+{"event": "authz", "caller": "spiffe://demo.local/ns/shop/sa/orders", "method": "GET", "path": "/stock/42", "decision": "allow", "ts": 1794581758.431}
+{"event": "authz", "caller": "spiffe://demo.local/ns/shop/sa/orders", "method": "POST", "path": "/admin/reset", "decision": "deny", "ts": 1794581758.433}
+{"event": "authz", "caller": "spiffe://demo.local/ns/shop/sa/reporting", "method": "GET", "path": "/stock/42", "decision": "deny", "ts": 1794581758.435}
+{"event": "handshake_rejected", "peer": "127.0.0.1", "reason": "PEER_DID_NOT_RETURN_A_CERTIFICATE", "ts": 1794581758.437}
+{"event": "handshake_rejected", "peer": "127.0.0.1", "reason": "CERTIFICATE_VERIFY_FAILED", "ts": 1794581758.438}
+

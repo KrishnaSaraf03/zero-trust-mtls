@@ -1,0 +1,6 @@
+{"event": "listening", "mode": "mtls-policy", "port": 8443, "ts": 1794581757.694}
+{"event": "authz", "caller": "spiffe://demo.local/ns/shop/sa/orders", "method": "GET", "path": "/stock/42", "decision": "allow", "ts": 1794581758.431}
+{"event": "authz", "caller": "spiffe://demo.local/ns/shop/sa/orders", "method": "POST", "path": "/admin/reset", "decision": "deny", "ts": 1794581758.433}
+{"event": "authz", "caller": "spiffe://demo.local/ns/shop/sa/reporting", "method": "GET", "path": "/stock/42", "decision": "deny", "ts": 1794581758.435}
+{"event": "handshake_rejected", "peer": "127.0.0.1", "reason": "PEER_DID_NOT_RETURN_A_CERTIFICATE", "ts": 1794581758.437}
+{"event": "handshake_rejected", "peer": "127.0.0.1", "reason": "CERTIFICATE_VERIFY_FAILED", "ts": 1794581758.438}
