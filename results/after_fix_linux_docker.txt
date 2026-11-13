@@ -1,0 +1,12 @@
+python 3.12.14 | OpenSSL 3.5.7 9 Jun 2026 | Linux-6.12.76-linuxkit-aarch64-with-glibc2.41
+1 rounds x 50 requests per cell, 5 warm-up requests discarded, loopback, 1 client thread
+
+conn       mode              p50      p95      p99     mean   p50 range across rounds   (microseconds)
+new        plain             316      434      502      324         316 .. 316       
+new        mtls             1664     1911     2028     1690        1664 .. 1664      
+new        mtls-policy      1610     1803     1899     1626        1610 .. 1610      
+
+keepalive  plain             133      207      455      149         133 .. 133       
+keepalive  mtls              150      239     2063      200         150 .. 150       
+keepalive  mtls-policy       150      196     2011      192         150 .. 150       
+
