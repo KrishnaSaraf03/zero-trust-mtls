@@ -1,0 +1,12 @@
+python 3.12.15 | OpenSSL 3.5.9 29 Sep 2026 | macOS-27.0.1-arm64-arm-64bit
+5 rounds x 1000 requests per cell, 100 warm-up requests discarded, loopback, 1 client thread
+
+conn       mode              p50      p95      p99     mean   p50 range across rounds   (microseconds)
+new        plain             240      309      395      244         237 .. 243       
+new        mtls             1352     1826     2889     1450        1345 .. 1374      
+new        mtls-policy      1365     1757     2852     1466        1350 .. 1409      
+
+keepalive  plain              94      170      217      108          93 .. 96        
+keepalive  mtls              103      161      243      115         102 .. 107       
+keepalive  mtls-policy       104      152      200      112         103 .. 105       
+
