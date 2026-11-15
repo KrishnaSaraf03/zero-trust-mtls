@@ -1,6 +1,6 @@
 # Track C: Zero-trust between two microservices
 Krishna Saraf, 2023A7PS0606P. Repo: https://github.com/KrishnaSaraf03/zero-trust-mtls
-Companion notes: [STUCK.md](STUCK.md) (where I got stuck) and [WEEK2.md](WEEK2.md) (second-week plan).
+Companion notes: [STUCK.md](https://github.com/KrishnaSaraf03/zero-trust-mtls/blob/main/STUCK.md) (where I got stuck) and [WEEK2.md](https://github.com/KrishnaSaraf03/zero-trust-mtls/blob/main/WEEK2.md) (second-week plan).
 
 ## 1. Goal
 
